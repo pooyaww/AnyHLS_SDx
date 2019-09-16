@@ -1,0 +1,112 @@
+Profile Summary
+Generated on: 2019-09-13 15:11:34
+Msec since Epoch: 1568380294463
+Profiled application: host
+Target platform: Xilinx
+Tool version: 2019.1
+Target devices: xilinx_u280_xdma_201910_1-0
+Flow mode: Hardware Emulation
+
+OpenCL API Calls
+API Name,Number Of Calls,Total Time (ms),Minimum Time (ms),Average Time (ms),Maximum Time (ms),
+clCreateProgramWithBinary,1,12430.1,12430.1,12430.1,12430.1,
+clFinish,2,5573.58,0.404493,2786.79,5573.18,
+clEnqueueTask,3,438.883,0.31286,146.294,429.697,
+clReleaseProgram,1,6.99433,6.99433,6.99433,6.99433,
+clCreateKernel,3,2.30513,0.735747,0.768378,0.830335,
+clCreateBuffer,2,1.55629,0.756416,0.778147,0.799878,
+clEnqueueMigrateMemObjects,2,0.112923,0.052589,0.0564615,0.060334,
+clGetDeviceIDs,5,0.10068,0.001002,0.020136,0.091132,
+clReleaseKernel,3,0.027572,0.002595,0.00919067,0.020168,
+clReleaseEvent,4,0.017313,0.002164,0.00432825,0.006402,
+clGetExtensionFunctionAddress,2,0.015219,0.002705,0.0076095,0.012514,
+clRetainMemObject,4,0.013926,0.001232,0.0034815,0.008045,
+clReleaseCommandQueue,1,0.012994,0.012994,0.012994,0.012994,
+clSetKernelArg,6,0.010929,0.000821,0.0018215,0.00539,
+clReleaseMemObject,6,0.008868,0.000812,0.001478,0.002094,
+clGetExtensionFunctionAddressForPlatform,2,0.007264,0.001152,0.003632,0.006112,
+clGetPlatformInfo,6,0.006933,0.000621,0.0011555,0.002013,
+clGetDeviceInfo,2,0.006843,0.003076,0.0034215,0.003767,
+clCreateContext,1,0.005631,0.005631,0.005631,0.005631,
+clCreateCommandQueue,1,0.004358,0.004358,0.004358,0.004358,
+clReleaseContext,1,0.003136,0.003136,0.003136,0.003136,
+clReleaseDevice,2,0.002956,0.001253,0.001478,0.001703,
+clRetainDevice,2,0.002355,0.000812,0.0011775,0.001543,
+
+
+Kernel Execution (includes estimated device times)
+Kernel,Number Of Enqueues,Total Time (ms),Minimum Time (ms),Average Time (ms),Maximum Time (ms),
+adder_stage,1,0.021554,0.021554,0.021554,0.021554,
+input_stage,1,0.020896,0.020896,0.020896,0.020896,
+output_stage,1,0.019991,0.019991,0.019991,0.019991,
+
+
+Compute Unit Utilization (includes estimated device times)
+Device,Compute Unit,Kernel,Global Work Size,Local Work Size,Number Of Calls,Dataflow Execution,Max Overlapping Executions,Dataflow Acceleration,Total Time (ms),Minimum Time (ms),Average Time (ms),Maximum Time (ms),Clock Frequency (MHz),
+xilinx_u280_xdma_201910_1-0,adder_stage_1,adder_stage,1:1:1,1:1:1,1,No,1,1.000000x,0.01585,0.01585,0.01585,0.01585,300,
+xilinx_u280_xdma_201910_1-0,input_stage_1,input_stage,1:1:1,1:1:1,1,No,1,1.000000x,0.01455,0.01455,0.01455,0.01455,300,
+xilinx_u280_xdma_201910_1-0,output_stage_1,output_stage,1:1:1,1:1:1,1,No,1,1.000000x,0.0141367,0.0141367,0.0141367,0.0141367,300,
+
+
+Data Transfer: Host to Global Memory
+Context:Number of Devices,Transfer Type,Number Of Buffer Transfers,Transfer Rate (MB/s),Average Bandwidth Utilization (%),Average Buffer Size (KB),Total Time (ms),Average Time (ms),
+context0:1,READ,1,N/A,N/A,16.384,N/A,N/A,
+context0:1,WRITE,1,N/A,N/A,16.384,N/A,N/A,
+
+
+Data Transfer: Kernels to Global Memory
+Device,Compute Unit/Port Name,Kernel Arguments,Memory Resources,Transfer Type,Number Of Transfers,Transfer Rate (MB/s),Average Bandwidth Utilization (%),Average Size (KB),Average Latency (ns),
+xilinx_u280_xdma_201910_1-0,input_stage_1/m_axi_gmem,input_r,HBM[0],READ,256,1126.05,9.77472,0.064,143.646,
+
+
+Data Transfer: Streams
+Device,Master Port,Master Kernel Arguments,Slave Port,Slave Kernel Arguments,Number Of Transfers,Transfer Rate (MB/s),Average Size (KB),Link Utilization (%),Link Starve (%),Link Stall (%),
+xilinx_u280_xdma_201910_1-0,PIPE,N/A,adder_stage_1/p0_pipe,All,1,1033.44,16.38,75.8755,20.604,3.52047,
+xilinx_u280_xdma_201910_1-0,PIPE,N/A,output_stage_1/p1_pipe,All,1,1158.69,16.38,75.9599,19.9592,4.08088,
+xilinx_u280_xdma_201910_1-0,adder_stage_1/p1_pipe,All,PIPE,All,1,1033.44,16.38,75.9036,20.5746,3.52178,
+xilinx_u280_xdma_201910_1-0,input_stage_1/p0_pipe,All,PIPE,All,1,1125.77,16.38,75.8193,21.2183,2.96241,
+
+
+Top Data Transfer: Kernels to Global Memory
+Device,Compute Unit,Number of Transfers,Average Bytes per Transfer,Transfer Efficiency (%),Total Data Transfer (MB),Total Write (MB),Total Read (MB),Total Transfer Rate (MB/s),
+xilinx_u280_xdma_201910_1-0,input_stage_1,256,64,1.5625,0.016384,0,0.016384,1126.05,
+
+
+Top Kernel Execution
+Kernel Instance Address,Kernel,Context ID,Command Queue ID,Device,Start Time (ms),Duration (ms),Global Work Size,Local Work Size,
+94589252052816,adder_stage,0,0,xilinx_u280_xdma_201910_1-0,0.042065,0.021554,1:1:1,1:1:1,
+94589252053312,input_stage,0,0,xilinx_u280_xdma_201910_1-0,0.042726,0.020896,1:1:1,1:1:1,
+94589252053744,output_stage,0,0,xilinx_u280_xdma_201910_1-0,0.043635,0.019991,1:1:1,1:1:1,
+
+
+Top Memory Writes: Host to Global Memory
+Buffer Address,Context ID,Command Queue ID,Start Time (ms),Duration (ms),Buffer Size (KB),Writing Rate(MB/s),
+0,0,0,12500.3,N/A,16.384,N/A,
+
+
+Top Memory Reads: Host to Global Memory
+Buffer Address,Context ID,Command Queue ID,Start Time (ms),Duration (ms),Buffer Size (KB),Reading Rate(MB/s),
+16384,0,0,18512.8,N/A,16.384,N/A,
+
+
+Guidance Parameters
+Parameter,Element,Value,
+DEVICE_EXEC_TIME,xilinx_u280_xdma_201910_1-0,0.021561,
+CU_CALLS,xilinx_u280_xdma_201910_1-0|adder_stage_1,1,
+CU_CALLS,xilinx_u280_xdma_201910_1-0|input_stage_1,1,
+CU_CALLS,xilinx_u280_xdma_201910_1-0|output_stage_1,1,
+MEMORY_BIT_WIDTH,xilinx_u280_xdma_201910_1-0,512,
+MIGRATE_MEM,host,2,
+MEMORY_USAGE,HBM[0],2,
+PLRAM_DEVICE,all,1,
+HBM_DEVICE,all,1,
+KDMA_DEVICE,all,0,
+P2P_DEVICE,all,0,
+P2P_HOST_TRANSFERS,host,0,
+PORT_BIT_WIDTH,output_stage_1/m_axi_gmem,32,
+PORT_BIT_WIDTH,input_stage_1/m_axi_gmem,32,
+KERNEL_COUNT,adder_stage,1,
+KERNEL_COUNT,input_stage,1,
+KERNEL_COUNT,output_stage,1,
+OBJECTS_RELEASED,all,1,
+

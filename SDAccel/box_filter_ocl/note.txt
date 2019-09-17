@@ -1,0 +1,6 @@
+Makefile for direct compiling from xocc no need to run vivado_hls
+
+mkdir -p ./xclbin
+/opt/Xilinx/SDx/2019.1/bin/xocc -t hw --platform xilinx_u200_xdma_201830_2 --save-temps  --temp_dir ./_x.hw_emu.xilinx_u200_xdma_201830_2/hls_top -c -k hls_top -I'src' -o'xclbin/hls_top.hw_emu.xilinx_u200_xdma_201830_2.xo' 'src/hls_top.cpp' 'src/box_filter.cpp'
+
+/opt/Xilinx/SDx/2019.1/bin/xocc -t hw_emu --platform xilinx_u200_xdma_201830_2 --save-temps  --temp_dir ./_x.hw_emu.xilinx_u200_xdma_201830_2/hls_top -l  --nk hls_top:1 -o'xclbin/hls_top.hw_emu.xilinx_u200_xdma_201830_2.xclbin' xclbin/hls_top.hw_emu.xilinx_u200_xdma_201830_2.xo

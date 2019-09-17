@@ -1,14 +1,21 @@
 ## Filter Chain
-OpenCL kernel compilation flow
+1. OpenCL kernel compilation flow using vivado_hls
+Building xo file via vivado_hls using makefile  
 
-linking xo files `xocc -l --platform xilinx_u280_xdma_201910_1 box_filter.xo -o box_filter.xclbin`
+`vivado_hls -f make_sdaccel_kernel.tcl`
+
+then linking xo files with platform to generate xclbin file   
+
+`xocc -l --platform xilinx_u280_xdma_201910_1 box_filter.xo -o box_filter.xclbin`
 
 use xcpp for host code compilation
 
 run host code passing xclbin file as its parameter
-    
+
+2. Directly building xclbin file by *XOCC* without calling vivado_hls   
+
 ----
-poring HLS generated kernel to OpenCL flow
+### Poring HLS generated kernel to OpenCL flow
 
 - SDAccel kernel must have one and only one s_axilite interface which will be used by host application to configure the kernel.
 *bundle control* is defined which is s_axilite interface and associated with all the arguments (in, out,...),

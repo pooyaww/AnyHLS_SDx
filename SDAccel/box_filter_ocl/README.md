@@ -1,11 +1,9 @@
 ## Filter Chain
 1. OpenCL kernel compilation flow using vivado_hls
 Building xo file via vivado_hls using makefile  
-
 `vivado_hls -f make_sdaccel_kernel.tcl`
 
 then linking xo files with platform to generate xclbin file   
-
 `xocc -l --platform xilinx_u280_xdma_201910_1 box_filter.xo -o box_filter.xclbin`
 
 use xcpp for host code compilation
@@ -13,6 +11,8 @@ use xcpp for host code compilation
 run host code passing xclbin file as its parameter
 
 2. Directly building xclbin file by *XOCC* without calling vivado_hls   
+`make build TARGET=hw DEVICE=xilinx_u280_xdma_201830_2`
+
 
 ----
 ### Poring HLS generated kernel to OpenCL flow

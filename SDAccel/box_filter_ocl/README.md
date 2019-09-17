@@ -1,4 +1,4 @@
-## Filter Chain
+## Box Filter
 1. OpenCL kernel compilation flow using vivado_hls
 Building xo file via vivado_hls using makefile  
 `vivado_hls -f make_sdaccel_kernel.tcl`   

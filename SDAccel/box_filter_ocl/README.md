@@ -3,7 +3,9 @@
 Building xo file via vivado_hls using makefile  
 `vivado_hls -f make_sdaccel_kernel.tcl`   
 then linking xo files with platform to generate xclbin file   
-`xocc -l --platform xilinx_u280_xdma_201910_1 box_filter.xo -o box_filter.xclbin`   
+`xocc -l --platform xilinx_u280_xdma_201910_1 box_filter.xo -o box_filter.xclbin`
+with VITIS   
+`v++ -l --platform xilinx_u280_xdma_201910_1 box_filter.xo -o box_filter.xclbin`
 use xcpp for host code compilation   
 run host code, passing xclbin file as its parameter
 

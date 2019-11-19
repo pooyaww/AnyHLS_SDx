@@ -26,3 +26,4 @@ csynth_design
 cosim_design
 export_design -rtl verilog -format ip_catalog -xo \
         $path/$krnlName.xo
+exit

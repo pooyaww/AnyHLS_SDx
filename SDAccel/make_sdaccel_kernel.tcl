@@ -4,7 +4,8 @@ add_files "box_filter.cpp hls_top.cpp"
 add_files -tb dummy_tb.cpp
 open_solution "solution1"
 #set_part {xcu200-fsgd2104-2-e} -tool vivado
-set_part {xcu250-figd2104-2L-e} -tool vivado
+#set_part {xcu250-figd2104-2L-e} -tool vivado
+set_part {xcu280-fsvh2892-2L-e} -tool vivado
 create_clock -period 10 -name default
 config_sdx -optimization_level none -target xocc
 config_schedule -effort medium -enable_dsp_full_reg

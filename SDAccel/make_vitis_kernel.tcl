@@ -5,6 +5,7 @@ set krnlFile "box_filter.cpp hls_top.cpp"
 # Vitis can compile without test_bench so no dummy_tb is required
 set krnlTB dummy_tb.cpp
 set krnlPlatform xcu280-fsvh2892-2L-e
+set solution "solution1"
 set path ./xoFlow
 
 #Script to create and output HLS kernel
@@ -12,7 +13,7 @@ open_project $projName
 set_top $krnlName
 add_files $krnlFile
 add_files -tb $krnlTB
-open_solution "solution1"
+open_solution $solution
 set_part $krnlPlatform
 create_clock -period 10 -name default
 #config_vitis -optimization_level none -target xocc

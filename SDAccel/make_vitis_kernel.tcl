@@ -2,7 +2,7 @@
 set projName "box_filter_proj"
 set krnlName "hls_top"
 set krnlFile "box_filter.cpp hls_top.cpp"
-set solution "solution2"
+set solution "solution1"
 set krnlTB "dummy_tb.cpp"
 set krnlPlatform "xcu280-fsvh2892-2L-e"
 #set krnlPlatform "xcu250-figd2104-2L-e"
